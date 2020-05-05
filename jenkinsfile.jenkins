@@ -15,7 +15,7 @@ pipeline  {
             steps {
                 echo 'Creating docker image ...'
                 dir('.'){
-                    sh "docker build -t dimagamera/telegrambot . "
+                    sh "docker build -t kunets2002/telegrambot . "
                 }
             }
         }
@@ -33,42 +33,42 @@ pipeline  {
             steps {
                 echo " ============== pushing image =================="
                 sh '''
-                docker push dimagamera/telegrambot:latest
+                docker push kunets2002/telegrambot:latest
                 '''
             }
         }
-        stage("docker stop") {
-            steps {
-                echo " ============== stoping all images =================="
-                sh '''
-                docker stop telepy
-                '''
-            }
-        } 
-        stage("docker remove") {
-            steps {
-                echo " ============== removing all docker containers =================="
-                sh '''
-                docker rm telepy
-                '''
-            }
-        }
-        stage("docker remove images") {
-            steps {
-                echo " ============== removing all docker images =================="
-                sh '''
-                docker rmi $(docker images -q)
-                '''
-            }
-        }
-        stage("docker run") {
-            steps {
-                echo " ============== starting telepy =================="
-                sh '''
-                docker run -d --restart=always --name telepy dimagamera/telegrambot
-                '''
-            }
-        }
+        // stage("docker stop") {
+        //     steps {
+        //         echo " ============== stoping all images =================="
+        //         sh '''
+        //         docker stop telepy
+        //         '''
+        //     }
+        // } 
+        // stage("docker remove") {
+        //     steps {
+        //         echo " ============== removing all docker containers =================="
+        //         sh '''
+        //         docker rm telepy
+        //         '''
+        //     }
+        // }
+        // stage("docker remove images") {
+        //     steps {
+        //         echo " ============== removing all docker images =================="
+        //         sh '''
+        //         docker rmi $(docker images -q)
+        //         '''
+        //     }
+        // }
+        // stage("docker run") {
+        //     steps {
+        //         echo " ============== starting telepy =================="
+        //         sh '''
+        //         docker run -d --restart=always --name telepy dimagamera/telegrambot
+        //         '''
+        //     }
+        // }
  //        stage("Deploy to stage server") {
 //           steps {
 //             echo " ============== Running playbook =================="
