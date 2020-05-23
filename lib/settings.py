@@ -1,6 +1,8 @@
 ############## TELEGRAM BOT ########################
-token = "1109533224:AAE13znQf9kZqTvGlIXPa8IbuO0zO6-yho8"
+#token = "1109533224:AAE13znQf9kZqTvGlIXPa8IbuO0zO6-yho8"
 ############## MSQL DATABASES ######################
-host = "13.53.137.81"
-user = "root"
-passwd = "my-secret-pass"
+import os
+host = os.environ['DB_HOST']
+user = os.environ['DB_USER']
+passwd = os.environ['DB_PASSWORD']
+token = os.environ['TELEGRAM_TOKEN']
