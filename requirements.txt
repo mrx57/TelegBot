@@ -28,7 +28,7 @@ pyint==1.1.0
 pylint==2.4.4
 pyTelegramBotAPI==3.6.7
 pytz==2019.3
-PyYAML==5.3.1
+PyYAML==5.4
 requests==2.7.0
 rsa==4.0
 scapy==2.4.3
