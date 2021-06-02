@@ -37,7 +37,7 @@ six==1.14.0
 soupsieve==2.0
 Telethon==1.11.3
 Unidecode==1.1.1
-urllib3==1.25.8
+urllib3==1.26.5
 vcrpy==4.0.2
 wrapt==1.11.2
 XlsxWriter==1.2.8
